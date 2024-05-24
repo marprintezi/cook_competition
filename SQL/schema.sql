@@ -672,5 +672,117 @@ ORDER BY
 LIMIT 1;
 SELECT * FROM MostAppearedTopic;
 
+--
+--indexes
+--
+
+CREATE INDEX idx_cuisine ON recipe (cuisine_id);
+CREATE INDEX idx_unit ON recipe (unit_id);
+ALTER TABLE recipe_meal_type
+ADD CONSTRAINT uk_recipe_meal_type UNIQUE (recipe_id, meal_type_id);
+
+-- για το ερωτημα 3.6
+--Ένας τρόπος για να βελτιώσουμε την απόδοση είναι με τη χρήση εθρετητιων.
+-- Μπορούμε να δημιουργήσουμε έναν σύνθετο εθρετηριο στον πίνακα recipe_label για τα πεδία recipe_id και label_id. 
+--Αυτός το σύνθετο ευρετηριο θα βοηθήσει τον ερωτηθείς να βρει γρηγορότερα τις συνταγές που έχουν τις ίδιες ετικέτες.
+
+CREATE INDEX idx_recipe_label
+ON recipe_label (recipe_id, label_id);
+
+ALTER TABLE recipe_label
+ADD CONSTRAINT uk_recipe_label UNIQUE (recipe_id, label_id);
+
+CREATE INDEX idx_recipe_equipment
+ON recipe_equipment (recipe_id, equipment_id);
+
+ALTER TABLE recipe_equipment
+ADD CONSTRAINT uk_recipe_equipment UNIQUE (recipe_id, equipment_id);
+
+CREATE INDEX idx_recipe_step
+ON recipe_step (recipe_id, step_id);
+
+ALTER TABLE recipe_step
+ADD CONSTRAINT uk_recipe_step UNIQUE (recipe_id, step_id);
+
+CREATE INDEX idx_fg
+ON ingredient (fg_id);
+
+CREATE INDEX idx_recipe_ingredient
+ON recipe_ingredient (recipe_id, ingredient_id);
+
+ALTER TABLE recipe_ingredient
+ADD CONSTRAINT uk_recipe_ingredient UNIQUE (recipe_id, ingredient_id);
+
+CREATE INDEX idx_topic_recipe
+ON topic_recipe (recipe_id, topic_id);
+
+ALTER TABLE topic_recipe
+ADD CONSTRAINT uk_topic_recipe UNIQUE (recipe_id, topic_id);
+
+CREATE INDEX idx_grade
+ON cook (grade_id);
+
+CREATE INDEX idx_cook_specialisation
+ON cook_specialisation (cuisine_id, cook_id);
+
+ALTER TABLE cook_specialisation
+ADD CONSTRAINT uk_cook_specialisation UNIQUE (cuisine_id, cook_id);
+
+CREATE INDEX idx_episode_cook
+ON episode_cook (episode_id, cook_id, recipe_id);
+
+ALTER TABLE episode_cook
+ADD CONSTRAINT uk_episode_cook UNIQUE (episode_id, cook_id, recipe_id);
+
+CREATE INDEX idx_episode_judge
+ON episode_judge (episode_id, judge_id);
+
+ALTER TABLE episode_judge
+ADD CONSTRAINT uk_episode_judge UNIQUE (episode_id, judge_id);
+
+CREATE INDEX idx_score
+ON score (episode_id, cook_id,judge_id);
+
+ALTER TABLE score
+ADD CONSTRAINT uk_score UNIQUE (episode_id, cook_id,judge_id);
+
+
+--για το ερωτημα 3.8
+--Εάν θέλουμε να βελτιστοποιήσουμε το ερώτημα χρησιμοποιώντας έναν εναλλακτικό Query Plan με τη χρήση force index,
+-- μπορούμε να εφαρμόσουμε τον δείκτη idx_recipe_equipment_recipe_id στον πίνακα recipe_equipment για να επιταχύνουμε την αναζήτηση των εξαρτημάτων σύμφωνα με τη συγκεκριμένη συνταγή.
+
+CREATE INDEX idx_recipe_equipment_recipe ON recipe_equipment (recipe_id);
+
+
+
+-- για το ερωτημα 3.9 μεσο ορο υδατανθρακων ανα ετος
+--Ένα σύνθετο ευρετήριο στον πίνακα των επεισοδίων (episode) με το πεδίο episode_date για γρήγορη πρόσβαση στα επεισόδια με βάση την ημερομηνία.
+
+
+CREATE INDEX idx_episode_date ON episode (calendar_year);
+
+
+
+--για το ερωτημα 3.10
+--ευρετήριο στο πεδίο "episode_id" του πίνακα "episode_cook"και ευρετήριο στο πεδίο "cuisine_id" του πίνακα "episode_cook", 
+-- Αυτό θα βοηθήσει στην επιτάχυνση της αναζήτησης και του φιλτραρίσματος των επεισοδίων ανά εθνική κουζίνα και έτος.
+
+
+CREATE INDEX idx_episode_cook_episode ON episode_cook (episode_id);
+
+
+--για το ερωτημα 3.11
+--Ένα ευρετήριο στον πίνακα των βαθμολογιών (score) για τα πεδία judge_id και cook_id για γρήγορη πρόσβαση στις βαθμολογίες ανά κριτή και μάγειρα.
+CREATE INDEX idx_judge_cook ON score (judge_id, cook_id);
+
+
+
+
+--για το ερωτημα 3.12 
+--Ένα ευρετήριο στον πίνακα των συνταγών (recipe) για το πεδίο difficulty για γρήγορη πρόσβαση στις συνταγές ανά επίπεδο δυσκολίας.
+CREATE INDEX idx_difficulty ON recipe (difficulty);
+
+
+
 
 

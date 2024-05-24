@@ -83,6 +83,29 @@ FROM cook c
 LEFT JOIN episode_judge ej ON c.cook_id = ej.judge_id
 WHERE ej.judge_id IS NULL;
 
+--3.5
+--Στην εκφώνηση του ερωτήματος ζητάει περισσότερες από 3 εμφανίσεις ,ωστόσο εμείς επειδή είχαμε κάποιους κριτές με ακριβώς 3 εμφανίσεις βάλαμε
+να εμφανίζει αυτό εφόσον ταιριάζει με τα δεδομένα μας και να δείξουμε ότι τρέχουν κανονικά οι εντολές.
+SELECT 
+    ej.judge_id,
+    c.first_name,
+    c.last_name,
+    COUNT(ej.episode_id) AS episodes_participated
+FROM 
+    episode_judge ej
+JOIN 
+    cook c ON ej.judge_id = c.cook_id
+JOIN 
+    episode e ON ej.episode_id = e.episode_id
+WHERE 
+    e.calendar_year = '2023' -- Αντικαταστήστε το Your_Year με το επιθυμητό έτος
+GROUP BY 
+    ej.judge_id
+HAVING 
+    COUNT(ej.episode_id) >= 3;
+
+
+
 
 --3.7
 SELECT c.cook_id, c.first_name, c.last_name

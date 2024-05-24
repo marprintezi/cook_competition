@@ -460,7 +460,7 @@ DELIMITER ;
 --
 
 
-
+--3.1
 CREATE VIEW average_scores_combined AS
 SELECT 
     'Cook' AS entity_type,
@@ -498,7 +498,7 @@ SELECT * FROM average_scores_combined;
 
 
 
-
+--3.3
 CREATE VIEW YoungCooksRecipeCount AS
 SELECT 
     c.cook_id,
@@ -522,7 +522,19 @@ ORDER BY
 SELECT * FROM CooksWithLessParticipation;
 
 
+--3.6
+AREATE VIEW 3topFood_groups AS
+SELECT r1.label_id AS label1_id, r2.label_id AS label2_id, COUNT(*) AS pair_count
+FROM recipe_label r1
+JOIN recipe_label r2 ON r1.recipe_id = r2.recipe_id AND r1.label_id < r2.label_id
+JOIN episode_cook ec ON r1.recipe_id = ec.recipe_id
+GROUP BY r1.label_id, r2.label_id
+ORDER BY pair_count DESC
+LIMIT 3;
 
+SELECT * FROM 3topFood_groups;
+
+--3.7
 CREATE VIEW YoungCooksRecipeCount AS
 SELECT 
     c.cook_id, 
@@ -547,7 +559,7 @@ SELECT * FROM CooksWithLessParticipation;
 
 
 
-
+--3.8
 CREATE VIEW EpisodeWithMostEquipment AS
 SELECT ec.episode_id, COUNT(*) AS equipment_count
 FROM episode_cook ec
@@ -558,7 +570,7 @@ LIMIT 1;
 SELECT * FROM EpisodeWithMostEquipment;
 
 
-
+--3.9
 CREATE VIEW AvgCarbohydratesPerYear AS
 SELECT 
     e.calendar_year AS competition_year, 
@@ -579,7 +591,7 @@ SELECT * FROM AvgCarbohydratesPerYear;
 
 
 
-
+--3.11
 CREATE VIEW Top5JudgeCookScores AS
 SELECT 
     c.first_name AS episode_judge_first_name,
@@ -606,7 +618,7 @@ SELECT * FROM Top5JudgeCookScores;
 
 
 
-
+--3.12
 CREATE VIEW MaxRecipeDifficultyPerYear AS
 SELECT
         e.calendar_year AS competition_year,
@@ -625,7 +637,7 @@ SELECT
 
 
 
-
+--3.13
 CREATE VIEW EpisodeExperience AS
 SELECT 
     episode_id,
@@ -656,7 +668,7 @@ SELECT * FROM EpisodeExperience;
 
 
 
-
+--3.14
 CREATE VIEW MostAppearedTopic AS
 SELECT
     t.name AS topic_name,

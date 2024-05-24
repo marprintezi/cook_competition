@@ -35,5 +35,5 @@ with open('C:\\Users\\marpr\\insert_cook_data.sql', 'w') as file:
             line += ";\n"
         file.write(line)
 
-print("SQL file created successfully with 50 records.")
+print("SQL file created successfully with 50 records.");
 

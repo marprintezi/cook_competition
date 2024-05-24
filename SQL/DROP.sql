@@ -31,6 +31,7 @@ DROP VIEW IF EXISTS MaxRecipeDifficultyPerYear;
 DROP VIEW IF EXISTS EpisodeExperience;
 DROP VIEW IF EXISTS MostAppearedTopic;
 DROP VIEW IF EXISTS NeverAppearedFood_Group;
+DROP VIEW IF EXISTS 3topFood_groups;
 
 
 

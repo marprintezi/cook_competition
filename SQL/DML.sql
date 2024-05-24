@@ -22,6 +22,9 @@ ORDER BY
     average_score DESC;
 
 
+
+
+
 --3.2
 SELECT 
     c.first_name,
@@ -83,6 +86,10 @@ FROM cook c
 LEFT JOIN episode_judge ej ON c.cook_id = ej.judge_id
 WHERE ej.judge_id IS NULL;
 
+
+
+
+
 --3.5
 --Στην εκφώνηση του ερωτήματος ζητάει περισσότερες από 3 εμφανίσεις ,ωστόσο εμείς επειδή είχαμε κάποιους κριτές με ακριβώς 3 εμφανίσεις βάλαμε
 να εμφανίζει αυτό εφόσον ταιριάζει με τα δεδομένα μας και να δείξουμε ότι τρέχουν κανονικά οι εντολές.
@@ -98,11 +105,60 @@ JOIN
 JOIN 
     episode e ON ej.episode_id = e.episode_id
 WHERE 
-    e.calendar_year = '2023' -- Αντικαταστήστε το Your_Year με το επιθυμητό έτος
+    e.calendar_year = 'Your_Year' -- Αντικαταστήστε το Your_Year με το επιθυμητό έτος
 GROUP BY 
     ej.judge_id
 HAVING 
     COUNT(ej.episode_id) >= 3;
+
+
+
+
+
+
+--3.6
+SELECT 
+    t1.name AS label1,
+    t2.name AS label2,
+    COUNT(*) AS appearances
+FROM 
+    recipe_label rl1
+JOIN 
+    recipe_label rl2 ON rl1.recipe_id = rl2.recipe_id AND rl1.label_id < rl2.label_id
+JOIN 
+    label t1 ON rl1.label_id = t1.label_id
+JOIN 
+    label t2 ON rl2.label_id = t2.label_id
+GROUP BY 
+    t1.name,
+    t2.name
+ORDER BY 
+    appearances DESC
+LIMIT 3;
+
+
+
+SELECT 
+    t1.name AS label1,
+    t2.name AS label2,
+    COUNT(*) AS appearances
+FROM 
+    recipe_label rl1 FORCE INDEX FOR JOIN (idx_recipe_label_recipe_label_id)
+JOIN 
+    recipe_label rl2 FORCE INDEX FOR JOIN (idx_recipe_label_recipe_label_id) ON rl1.recipe_id = rl2.recipe_id AND rl1.label_id < rl2.label_id
+JOIN 
+    label t1 ON rl1.label_id = t1.label_id
+JOIN 
+    label t2 ON rl2.label_id = t2.label_id
+GROUP BY 
+    t1.name,
+    t2.name
+ORDER BY 
+    appearances DESC
+LIMIT 3;
+
+
+
 
 
 
@@ -119,8 +175,6 @@ HAVING COUNT(*) <= (
     ORDER BY COUNT(*) DESC
     LIMIT 1
 ) - 5;
-
-
 
 
 
@@ -152,6 +206,11 @@ ORDER BY
 LIMIT 1;
 
 
+
+
+
+
+
 --3.9
 SELECT e.calendar_year AS competition_year, AVG(ri.carbon_hydrates) AS avg_carbohydrates_per_recipe
 FROM episode e
@@ -160,6 +219,30 @@ JOIN recipe r ON ec.recipe_id = r.recipe_id
 JOIN recipe_ingredient ri ON r.recipe_id = ri.recipe_id
 GROUP BY e.calendar_year
 ORDER BY e.calendar_year;
+
+
+
+
+
+
+--3.10
+
+SELECT r.cuisine_id, COUNT(DISTINCT e1.episode_id) AS participation_count
+FROM episode e1
+JOIN episode e2 ON YEAR(e1.calendar_year) + 1 = YEAR(e2.calendar_year)
+JOIN episode_cook ec1 ON e1.episode_id = ec1.episode_id
+JOIN episode_cook ec2 ON e2.episode_id = ec2.episode_id
+JOIN recipe r ON ec1.recipe_id = r.recipe_id
+             AND ec2.recipe_id = r.recipe_id
+GROUP BY r.cuisine_id
+HAVING participation_count >= 3
+ORDER BY r.cuisine_id;
+
+
+
+
+
+
 
 --3.11
 SELECT 
@@ -188,6 +271,8 @@ LIMIT 5;
 
 
 
+
+
 --3.12
 SELECT
         e.calendar_year AS competition_year,
@@ -204,6 +289,9 @@ SELECT
          competition_year;
 
     
+
+
+
 
 --3.13
 SELECT 
@@ -235,6 +323,8 @@ LIMIT 1;
 
 
 
+
+
 --3.14
 SELECT
     t.name AS topic_name,
@@ -248,6 +338,9 @@ GROUP BY
 ORDER BY
     appearance_count DESC
 LIMIT 1;
+
+
+
 
 
 

@@ -775,6 +775,7 @@ insert into food_group (name,description) values('White meat','Chicken, turkey, 
 insert into food_group (name,description) values('Eggs','');
 insert into food_group (name,description) values('Fish and seafood','Fish, e.g. sardine, mullet, goby, anchovy, atherina, ruff, flounder, grouper, cod, galley, tuna, sea bass, bream, bream, red snapper Seafood (molluscs, shellfish, crustaceans), eg squid, cuttlefish, octopus, shrimp, mussels, oysters.');
 insert into food_group (name,description) values('Added fats and oils, olives and nuts','The added fats and oils (olive oil, other vegetable oils (seed oils): sunflower oil, corn oil, soybean oil, sesame oil, etc., margarine, butter, olives, nuts, walnuts, almonds, peanuts, hazelnuts, etc., sunflower seeds, sesame etc., spread products derived from the above');
+insert into food_group (name,description) values('Alcohol','Me regoula xaxax');
 
 --ingredient
 insert into ingredient (name,caloriesper100gr , fg_id)  values('Adobo Chile',141,13);

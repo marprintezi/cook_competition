@@ -4,7 +4,21 @@
 
 
 --drop views
+DROP VIEW IF EXISTS YoungCooksRecipeCount;
 
+DROP VIEW IF EXISTS CooksWithLessParticipation;
+
+DROP VIEW IF EXISTS EpisodeWithMostEquipment;
+
+DROP VIEW IF EXISTS AvgCarbohydratesPerYear;
+
+DROP VIEW IF EXISTS Top5JudgeCookScores;
+
+DROP VIEW IF EXISTS MaxRecipeDifficultyPerYear
+
+DROP VIEW IF EXISTS EpisodeExperience;
+
+DROP VIEW IF EXISTS MostAppearedTopic;
 
 
 

@@ -225,7 +225,7 @@ CREATE TABLE score (
 
 --
 --
---Procedures
+--PROCEDURES
 --
 --
 
@@ -455,7 +455,7 @@ DELIMITER ;
 
 --
 --
---Views
+--VIEWS
 --
 --
 
@@ -672,8 +672,22 @@ ORDER BY
 LIMIT 1;
 SELECT * FROM MostAppearedTopic;
 
+
+--3.15
+CREATE VIEW NeverAppearedFood_Group AS
+SELECT food_group.fg_id, food_group.name
+FROM food_group
+LEFT JOIN ingredient ON food_group.fg_id = ingredient.fg_id
+WHERE ingredient.ingredient_id IS NULL;
+
+SELECT * FROM NeverAppearedFood_Group;
+
+
+
 --
---indexes
+--
+--INDEXES
+--
 --
 
 CREATE INDEX idx_cuisine ON recipe (cuisine_id);

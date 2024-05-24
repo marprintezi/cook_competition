@@ -1,6 +1,25 @@
+--DDL
+--Notes:
+--must first create table that contains referenced value and then the table with the foreign key
+--dropping tables must be in correct order: bottom up
+
+
 drop database if exists cook_competition;
 create database cook_competition;
 use cook_competition;
+
+CREATE TABLE cuisine (
+           cuisine_id INT NOT NULL AUTO_INCREMENT,
+           name VARCHAR(100) NOT NULL,
+           PRIMARY KEY (cuisine_id)
+);
+
+CREATE TABLE unit (
+            unit_id INT NOT NULL AUTO_INCREMENT,
+            name VARCHAR(100) NOT NULL,
+            PRIMARY KEY (unit_id)
+);
+
 CREATE TABLE  recipe (
               recipe_id INT NOT NULL AUTO_INCREMENT,
               name VARCHAR(100) NOT NULL,
@@ -18,11 +37,7 @@ CREATE TABLE  recipe (
 
 );
 
-CREATE TABLE cuisine (
-           cuisine_id INT NOT NULL AUTO_INCREMENT,
-           name VARCHAR(100) NOT NULL,
-           PRIMARY KEY (cuisine_id)
-);
+
 
 CREATE TABLE meal_type (
              meal_type_id INT NOT NULL AUTO_INCREMENT,
@@ -78,6 +93,7 @@ CREATE TABLE step (
 UPDATE step
 SET time = SEC_TO_TIME(FLOOR(RAND() * 3600));
 
+
 CREATE TABLE recipe_step (
                is_prep BOOLEAN DEFAULT FALSE,
                recipe_step_order INT NOT NULL,
@@ -86,6 +102,13 @@ CREATE TABLE recipe_step (
                PRIMARY KEY (recipe_id,step_id),
                constraint recipe_step_ibfk_1 foreign key (recipe_id) references recipe (recipe_id) on delete cascade on update cascade,
                constraint recipe_step_ibfk_2 foreign key (step_id) references step (step_id) on delete cascade on update cascade
+);
+
+CREATE TABLE food_group (
+              fg_id INT NOT NULL AUTO_INCREMENT,
+              name VARCHAR(100) NOT NULL,
+              description VARCHAR(300),
+              PRIMARY KEY (fg_id)
 );
 
 CREATE TABLE ingredient (
@@ -110,23 +133,13 @@ CREATE TABLE recipe_ingredient (
                  constraint recipe_ingredient_ibfk_2 foreign key (ingredient_id) references ingredient (ingredient_id) on delete cascade on update cascade
                 );
 
-CREATE TABLE food_group (
-              fg_id INT NOT NULL AUTO_INCREMENT,
-              name VARCHAR(100) NOT NULL,
-              description VARCHAR(100),
-              PRIMARY KEY (fg_id)
-);
 
-CREATE TABLE unit (
-            unit_id INT NOT NULL AUTO_INCREMENT,
-            name VARCHAR(100) NOT NULL,
-            PRIMARY KEY (unit_id)
-);
+
 
 CREATE TABLE topic (
               topic_id INT NOT NULL AUTO_INCREMENT,
-              name VARCHAR(300) NOT NULL,
-              description VARCHAR(100),
+              name VARCHAR(100) NOT NULL,
+              description VARCHAR(300),
               PRIMARY KEY (topic_id)
 );
 
@@ -136,6 +149,12 @@ CREATE TABLE topic_recipe (
              PRIMARY KEY (recipe_id,topic_id),
              constraint topic_recipe_ibfk_1 foreign key (recipe_id) references recipe (recipe_id) on delete cascade on update cascade,
              constraint topic_recipe_ibfk_2 foreign key (topic_id) references topic (topic_id) on delete cascade on update cascade
+);
+
+CREATE TABLE grade (
+             grade_id INT NOT NULL AUTO_INCREMENT,
+             name VARCHAR(100) NOT NULL,
+             PRIMARY KEY (grade_id)
 );
 
 CREATE TABLE cook (
@@ -152,11 +171,7 @@ CREATE TABLE cook (
 
 update cook   set age=DATEDIFF(CURRENT_DATE(),birth_date)/365;
 
-CREATE TABLE grade (
-             grade_id INT NOT NULL AUTO_INCREMENT,
-             name VARCHAR(100) NOT NULL,
-             PRIMARY KEY (grade_id)
-);
+
 
 CREATE TABLE cook_specialisation (
                yrs_of_exp INT,
@@ -178,10 +193,12 @@ CREATE TABLE episode_cook (
              episode_id INT NOT NULL ,
              cook_id INT NOT NULL ,
              recipe_id INT NOT NULL ,
-             PRIMARY KEY (episode_id,cook_id,recipe_id),
+             cuisine_id INT NOT NULL,
+             PRIMARY KEY (episode_id,cook_id,recipe_id,cuisine_id),
              constraint episode_cook_ibfk_1 foreign key (episode_id) references episode (episode_id) on delete cascade on update cascade,
              constraint episode_cook_ibfk_2 foreign key (cook_id) references cook (cook_id) on delete cascade on update cascade,
-             constraint episode_cook_ibfk_3 foreign key (recipe_id) references recipe(recipe_id) on delete cascade on update cascade
+             constraint episode_cook_ibfk_3 foreign key (recipe_id) references recipe(recipe_id) on delete cascade on update cascade,
+             constraint episode_cook_ibfk_4 foreign key (cuisine_id) references cuisine(cuisine_id) on delete cascade on update cascade
 );
 
 CREATE TABLE episode_judge (
@@ -205,6 +222,12 @@ CREATE TABLE score (
              constraint score_ibfk_2 foreign key (cook_id) references cook(cook_id) on delete cascade on update cascade,
              constraint score_ibfk_3 foreign key (judge_id) references cook(cook_id) on delete cascade on update cascade
              );
+
+--
+--
+--Procedures
+--
+--
 
 
 DELIMETER //
@@ -427,5 +450,227 @@ BEGIN
 END //
 
 DELIMITER ;
+
+
+
+--
+--
+--Views
+--
+--
+
+
+
+CREATE VIEW average_scores_combined AS
+SELECT 
+    'Cook' AS entity_type,
+    c.first_name,
+    c.last_name,
+    AVG(s.points) AS average_score
+FROM 
+    cook c
+JOIN 
+    score s ON c.cook_id = s.cook_id
+GROUP BY 
+    c.cook_id, c.first_name, c.last_name
+
+UNION ALL
+
+SELECT 
+    'Cuisine' AS entity_type,
+    c.name AS entity_name,
+    NULL AS last_name,
+    AVG(s.points) AS average_score
+FROM 
+    score s
+JOIN 
+    episode_cook ec ON s.episode_id = ec.episode_id AND s.cook_id = ec.cook_id
+JOIN 
+    recipe r ON ec.recipe_id = r.recipe_id
+JOIN 
+    cuisine c ON r.cuisine_id = c.cuisine_id
+GROUP BY 
+    c.name
+ORDER BY 
+    average_score DESC;
+
+SELECT * FROM average_scores_combined;
+
+
+
+
+CREATE VIEW YoungCooksRecipeCount AS
+SELECT 
+    c.cook_id,
+    c.first_name,
+    c.last_name,
+    c.birth_date,
+    COUNT(r.recipe_id) AS total_recipes
+FROM 
+    cook c
+JOIN 
+    episode_cook ec ON c.cook_id = ec.cook_id
+JOIN 
+    recipe r ON ec.recipe_id = r.recipe_id
+WHERE 
+    TIMESTAMPDIFF(YEAR, c.birth_date, CURDATE()) < 30
+GROUP BY 
+    c.cook_id
+ORDER BY 
+    total_recipes DESC;
+
+SELECT * FROM CooksWithLessParticipation;
+
+
+
+CREATE VIEW YoungCooksRecipeCount AS
+SELECT 
+    c.cook_id, 
+    c.first_name, 
+    c.last_name
+FROM 
+    cook c
+JOIN 
+    episode_cook ec ON c.cook_id = ec.cook_id
+GROUP BY 
+    c.cook_id
+HAVING 
+    COUNT(*) <= (
+        SELECT COUNT(*)
+        FROM episode_cook
+        GROUP BY cook_id
+        ORDER BY COUNT(*) DESC
+        LIMIT 1
+    ) - 5;
+
+SELECT * FROM CooksWithLessParticipation;
+
+
+
+
+CREATE VIEW EpisodeWithMostEquipment AS
+SELECT ec.episode_id, COUNT(*) AS equipment_count
+FROM episode_cook ec
+JOIN recipe_equipment re ON ec.recipe_id = re.recipe_id
+GROUP BY ec.episode_id
+ORDER BY equipment_count DESC
+LIMIT 1;
+SELECT * FROM EpisodeWithMostEquipment;
+
+
+
+CREATE VIEW AvgCarbohydratesPerYear AS
+SELECT 
+    e.calendar_year AS competition_year, 
+    AVG(ri.carbon_hydrates) AS avg_carbohydrates_per_recipe
+FROM 
+    episode e
+JOIN 
+    episode_cook ec ON e.episode_id = ec.episode_id
+JOIN 
+    recipe r ON ec.recipe_id = r.recipe_id
+JOIN 
+    recipe_ingredient ri ON r.recipe_id = ri.recipe_id
+GROUP BY 
+    e.calendar_year
+ORDER BY 
+    e.calendar_year;
+SELECT * FROM AvgCarbohydratesPerYear;
+
+
+
+
+CREATE VIEW Top5JudgeCookScores AS
+SELECT 
+    c.first_name AS episode_judge_first_name,
+    c.last_name AS episode_judge_last_name,
+    c2.first_name AS episode_cook_first_name,
+    c2.last_name AS episode_cook_last_name,
+    SUM(s.points) AS total_score
+FROM 
+    episode_judge ej
+JOIN 
+    score s ON ej.judge_id = s.judge_id
+JOIN 
+    episode_cook ec ON s.cook_id = ec.cook_id
+JOIN 
+    cook c2 ON ec.cook_id = c2.cook_id
+JOIN 
+    cook c ON ej.judge_id = c.cook_id
+GROUP BY 
+    ej.judge_id, ec.cook_id
+ORDER BY 
+    total_score DESC
+LIMIT 5;
+SELECT * FROM Top5JudgeCookScores;
+
+
+
+
+CREATE VIEW MaxRecipeDifficultyPerYear AS
+SELECT
+        e.calendar_year AS competition_year,
+        e.episode_id,
+         e.number,
+        MAX(r.difficulty) AS max_difficulty
+     FROM
+         episode e
+     JOIN
+         episode_cook ec ON e.episode_id = ec.episode_id
+     JOIN
+         recipe r ON ec.recipe_id = r.recipe_id
+     GROUP BY
+         competition_year;
+ SELECT * FROM MaxRecipeDifficultyPerYear;
+
+
+
+
+CREATE VIEW EpisodeExperience AS
+SELECT 
+    episode_id,
+    avg_cook_experience,
+    avg_judge_experience,
+    (avg_cook_experience + avg_judge_experience) AS total_experience
+FROM (
+    SELECT 
+        ec.episode_id,
+        AVG(coalesce(DATEDIFF(CURRENT_DATE(), c.birth_date), 0) / 365) AS avg_cook_experience,
+        AVG(coalesce(DATEDIFF(CURRENT_DATE(), j.birth_date), 0) / 365) AS avg_judge_experience
+    FROM 
+        episode_cook ec
+    JOIN 
+        cook c ON ec.cook_id = c.cook_id
+    JOIN 
+        episode_judge ej ON ec.episode_id = ej.episode_id
+    JOIN 
+        cook j ON ej.judge_id = j.cook_id
+    GROUP BY 
+        ec.episode_id
+) AS avg_experience_per_episode
+ORDER BY 
+    total_experience ASC
+LIMIT 1;
+SELECT * FROM EpisodeExperience;
+
+
+
+
+
+CREATE VIEW MostAppearedTopic AS
+SELECT
+    t.name AS topic_name,
+    COUNT(tr.topic_id) AS appearance_count
+FROM
+    topic_recipe tr
+JOIN
+    topic t ON tr.topic_id = t.topic_id
+GROUP BY
+    tr.topic_id
+ORDER BY
+    appearance_count DESC
+LIMIT 1;
+SELECT * FROM MostAppearedTopic;
+
 
 

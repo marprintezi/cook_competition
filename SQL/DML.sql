@@ -227,3 +227,11 @@ ORDER BY
 LIMIT 1;
 
 
+
+--3.15
+SELECT food_group.fg_id, food_group.name
+FROM food_group
+LEFT JOIN ingredient ON food_group.fg_id = ingredient.fg_id
+WHERE ingredient.ingredient_id IS NULL;
+
+

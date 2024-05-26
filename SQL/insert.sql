@@ -1127,7 +1127,7 @@ insert into grade (name) values('Third Cook');
 insert into grade (name) values('Chefs Assistant');
 insert into grade (name) values('Head Chef');
 
---cook
+--cook( αντι για το αρχειο)
 INSERT INTO cook (cook_id, first_name, last_name, phone_number, birth_date, age, grade_id) VALUES (151, 'Lisa', 'Charles', '(421)460-9605x5', '1999-03-17', 25, 5);
 INSERT INTO cook (cook_id, first_name, last_name, phone_number, birth_date, age, grade_id) VALUES (152, 'Timothy', 'Ortiz', '(878)974-0555x7', '1979-12-24', 45, 5);
 INSERT INTO cook (cook_id, first_name, last_name, phone_number, birth_date, age, grade_id) VALUES (153, 'Scott', 'Stokes', '(795)718-2224x5', '1987-10-26', 37, 4);
@@ -1179,9 +1179,6 @@ INSERT INTO cook (cook_id, first_name, last_name, phone_number, birth_date, age,
 INSERT INTO cook (cook_id, first_name, last_name, phone_number, birth_date, age, grade_id) VALUES (199, 'Jessica', 'Moore', '+1-547-858-8792', '1998-03-22', 26, 2);
 INSERT INTO cook (cook_id, first_name, last_name, phone_number, birth_date, age, grade_id) VALUES (200, 'John', 'Hodges', '001-337-414-584', '1984-10-07', 40, 4);
 
-
-
---cook(extra)
 INSERT INTO cook (cook_id, first_name, last_name, phone_number, birth_date, age, grade_id) VALUES (201, 'Sarah', 'Jackson', '788-419-1880x29', '1991-05-15', 33, 4);
 INSERT INTO cook (cook_id, first_name, last_name, phone_number, birth_date, age, grade_id) VALUES (202, 'Ryan', 'Lee', '001-689-642-094', '1986-02-20', 38, 3);
 INSERT INTO cook (cook_id, first_name, last_name, phone_number, birth_date, age, grade_id) VALUES (203, 'Emily', 'Gonzalez', '001-803-254-249', '1990-08-10', 34, 2);

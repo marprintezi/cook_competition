@@ -110,6 +110,7 @@ CREATE TABLE food_group (
               description VARCHAR(300),
               PRIMARY KEY (fg_id)
 );
+ALTER TABLE food_group AUTO_INCREMENT = 13;
 
 CREATE TABLE ingredient (
               ingredient_id INT NOT NULL AUTO_INCREMENT,
@@ -119,7 +120,7 @@ CREATE TABLE ingredient (
               PRIMARY KEY (ingredient_id),
               constraint ingredient_ibfk_1 foreign key (fg_id) references food_group (fg_id) on delete cascade on update cascade
 );
-
+ALTER TABLE ingredient AUTO_INCREMENT = 162;
 
 CREATE TABLE recipe_ingredient (
                  quantity DECIMAL(6,2) NOT NULL ,

@@ -351,4 +351,4 @@ WHERE ingredient.ingredient_id IS NULL;
 
 --CALL VIEWS
 SELECT * FROM average_scores_combined;
-
+SELECT * FROM  YoungCooksRecipeCount order by cook_id;

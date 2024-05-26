@@ -207,7 +207,7 @@ CREATE TABLE episode_cook (
              episode_id INT NOT NULL ,
              cook_id INT NOT NULL ,
              recipe_id INT NOT NULL ,
-             PRIMARY KEY (episode_id,cook_id,recipe_id,cuisine_id),
+             PRIMARY KEY (episode_id,cook_id,recipe_id),
              constraint episode_cook_ibfk_1 foreign key (episode_id) references episode (episode_id) on delete cascade on update cascade,
              constraint episode_cook_ibfk_2 foreign key (cook_id) references cook (cook_id) on delete cascade on update cascade,
              constraint episode_cook_ibfk_3 foreign key (recipe_id) references recipe(recipe_id) on delete cascade on update cascade

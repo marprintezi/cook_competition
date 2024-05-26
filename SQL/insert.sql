@@ -922,7 +922,7 @@ INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_i
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(150, 62.60, 20.10, 5.30, 39, 209);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(255, 1.10, 12.60, 10.50, 40, 192);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(255, 0.00, 0.00, 0.00, 40, 169);
-INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(80, 0.00, 0.00, 0.00, 40, 169);
+INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(80, 0.00, 0.00, 0.00, 40, 168);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(102, 8.50, 6.30, 0.50, 41, 168);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(102, 28.60, 2.50, 0.30, 41, 223);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(87, 0.00, 19.00, 7.50, 41, 182);
@@ -936,14 +936,14 @@ INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_i
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(300, 0.00, 19.00, 7.50, 45, 182);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(300, 62.60, 20.10, 5.30, 46, 209);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(157, 1.10, 12.60, 10.50, 46, 192);
-INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(175, 1.10, 12.60, 10.50, 46, 192);
+INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(175, 1.10, 12.60, 10.50, 46, 191);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(180, 26.70, 2.50, 0.10, 47, 218);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(180, 1.30, 24.90, 33.90, 47, 180);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(90, 62.60, 20.10, 5.30, 48, 209);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(90, 12.00, 0.80, 0.60, 49, 207);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(100, 4.80, 3.20, 1.00, 50, 208);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(100, 1.30, 24.90, 33.90, 50, 180);
-INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(190, 4.80, 3.20, 1.00, 50, 208);
+INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(190, 4.80, 3.20, 1.00, 50, 207);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(220, 4.80, 3.20, 1.00, 51, 208);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(145, 1.10, 12.60, 10.50, 51, 192);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(300, 4.80, 3.20, 1.00, 52, 208);
@@ -951,7 +951,7 @@ INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_i
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(250, 76.00, 10.00, 1.00, 52, 194);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(170, 4.80, 3.20, 1.00, 53, 208);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(210, 4.80, 3.20, 1.00, 54, 208);
-INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(190, 4.80, 3.20, 1.00, 54, 208);
+INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(190, 4.80, 3.20, 1.00, 54, 207);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(180, 1.10, 12.60, 10.50, 55, 192);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(200, 4.80, 3.20, 1.00, 55, 208);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(195, 1.10, 12.60, 10.50, 56, 192);
@@ -962,7 +962,7 @@ INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_i
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(678, 0.00, 0.00, 0.00, 59, 169);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(135, 62.60, 20.10, 5.30, 60, 209);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(790, 0.00, 19.00, 7.50, 60, 182);
-INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(560, 0.00, 19.00, 7.50, 60, 182);
+INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(560, 0.00, 19.00, 7.50, 60, 181);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(450, 0.00, 0.00, 0.00, 61, 169);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(220, 62.60, 20.10, 5.30, 61, 209);
 INSERT INTO recipe_ingredient (quantity, carbon_hydrates, protein, fat, recipe_id, ingredient_id) VALUES(105, 9.60, 1.10, 0.00, 62, 178);

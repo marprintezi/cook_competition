@@ -242,15 +242,16 @@ CREATE TABLE IF NOT EXISTS `image` (
 );
 
 CREATE TABLE IF NOT EXISTS `user` (
-                                      `id` INT NOT NULL AUTO_INCREMENT,
-                                      `user_name` VARCHAR(100) NOT NULL,
-                                      `password` VARCHAR(100) NOT NULL,
-                                      `is_admin` BOOLEAN,
-                                      `cook_id` INT,
-                                          PRIMARY KEY (`id`),
+    `user_id` INT NOT NULL AUTO_INCREMENT,
+    `user_name` VARCHAR(100) NOT NULL,
+    `password` VARCHAR(100) NOT NULL,
+    `is_admin` BOOLEAN,
+    `cook_id` INT,
+    PRIMARY KEY (`user_id`),
     CONSTRAINT `user_name_uc` UNIQUE (`user_name` ASC),
-    CONSTRAINT `fk_cook_user` FOREIGN KEY (`cook_id`) REFERENCES `cook` (`id`)
+    CONSTRAINT `fk_cook_user` FOREIGN KEY (`cook_id`) REFERENCES `cook` (`cook_id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
 
 
 

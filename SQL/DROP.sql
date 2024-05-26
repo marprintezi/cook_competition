@@ -22,6 +22,7 @@ DROP INDEX idx_difficulty ON recipe;
 
 
 --drop views
+DROP VIEW IF EXISTS average_scores_combined
 DROP VIEW IF EXISTS YoungCooksRecipeCount;
 DROP VIEW IF EXISTS CooksWithLessParticipation;
 DROP VIEW IF EXISTS EpisodeWithMostEquipment;

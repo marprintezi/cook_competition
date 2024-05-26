@@ -73,6 +73,7 @@ CREATE TABLE equipment (
              description TEXT,
              PRIMARY KEY (equipment_id)
 );
+ALTER TABLE equipment AUTO_INCREMENT= 31;
 
 CREATE TABLE recipe_equipment (
             recipe_id INT NOT NULL ,
@@ -171,6 +172,7 @@ CREATE TABLE cook (
 );
 
 update cook   set age=DATEDIFF(CURRENT_DATE(),birth_date)/365;
+ALTER TABLE cook AUTO_INCREMENT= 151;
 
 
 

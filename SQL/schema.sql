@@ -235,6 +235,25 @@ CREATE TABLE score (
              constraint score_ibfk_3 foreign key (judge_id) references cook(cook_id) on delete cascade on update cascade
              );
 
+CREATE TABLE IF NOT EXISTS `image` (
+                                      `id` INT NOT NULL AUTO_INCREMENT,
+                                      `image` BLOB NOT NULL,
+                                          PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `user` (
+                                      `id` INT NOT NULL AUTO_INCREMENT,
+                                      `user_name` VARCHAR(100) NOT NULL,
+                                      `password` VARCHAR(100) NOT NULL,
+                                      `is_admin` BOOLEAN,
+                                      `cook_id` INT,
+                                          PRIMARY KEY (`id`),
+    CONSTRAINT `user_name_uc` UNIQUE (`user_name` ASC),
+    CONSTRAINT `fk_cook_user` FOREIGN KEY (`cook_id`) REFERENCES `cook` (`id`)
+);
+
+
+
 --
 --
 --PROCEDURES

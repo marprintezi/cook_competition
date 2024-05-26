@@ -13,12 +13,15 @@ CREATE TABLE cuisine (
            name VARCHAR(100) NOT NULL,
            PRIMARY KEY (cuisine_id)
 );
+ALTER TABLE cuisine AUTO_INCREMENT = 1;
 
 CREATE TABLE unit (
             unit_id INT NOT NULL AUTO_INCREMENT,
             name VARCHAR(100) NOT NULL,
             PRIMARY KEY (unit_id)
 );
+ALTER TABLE unit AUTO_INCREMENT = 1;
+
 
 CREATE TABLE  recipe (
               recipe_id INT NOT NULL AUTO_INCREMENT,
@@ -44,6 +47,8 @@ CREATE TABLE meal_type (
              name VARCHAR(100) NOT NULL,
              PRIMARY KEY (meal_type_id)
 );
+ALTER TABLE meal_type AUTO_INCREMENT = 1;
+
 
 CREATE TABLE recipe_meal_type (
                 recipe_id INT NOT NULL ,
@@ -58,6 +63,8 @@ CREATE TABLE label (
            name VARCHAR(100) NOT NULL,
            PRIMARY KEY (label_id)
 );
+ALTER TABLE label AUTO_INCREMENT = 1;
+
 
 CREATE TABLE recipe_label (
            recipe_id INT NOT NULL ,
@@ -89,6 +96,7 @@ CREATE TABLE step (
             description VARCHAR(200),
             PRIMARY KEY (step_id)
 );
+ALTER TABLE step AUTO_INCREMENT = 1;
 
 
 CREATE TABLE recipe_step (
@@ -140,6 +148,9 @@ CREATE TABLE topic (
               description VARCHAR(300),
               PRIMARY KEY (topic_id)
 );
+ALTER TABLE topic AUTO_INCREMENT = 1;
+
+
 
 CREATE TABLE topic_recipe (
              recipe_id INT NOT NULL ,
@@ -154,6 +165,8 @@ CREATE TABLE grade (
              name VARCHAR(100) NOT NULL,
              PRIMARY KEY (grade_id)
 );
+ALTER TABLE grade AUTO_INCREMENT = 1;
+
 
 CREATE TABLE cook (
                 cook_id INT NOT NULL AUTO_INCREMENT,
@@ -187,6 +200,8 @@ CREATE TABLE episode (
                number INT NOT NULL ,
                PRIMARY KEY (episode_id)
 );
+ALTER TABLE episode AUTO_INCREMENT = 1;
+
 
 CREATE TABLE episode_cook (
              episode_id INT NOT NULL ,

@@ -349,3 +349,6 @@ LEFT JOIN ingredient ON food_group.fg_id = ingredient.fg_id
 WHERE ingredient.ingredient_id IS NULL;
 
 
+--CALL VIEWS
+SELECT * FROM average_scores_combined;
+

@@ -531,7 +531,7 @@ GROUP BY
 ORDER BY 
     total_recipes DESC;
 
-SELECT * FROM  select * from YoungCooksRecipeCount order by cook_id;;
+SELECT * FROM  select * from YoungCooksRecipeCount order by cook_id;
 
 
 --3.6

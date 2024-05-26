@@ -24,6 +24,7 @@ DROP INDEX idx_difficulty ON recipe;
 --drop views
 DROP VIEW IF EXISTS average_scores_combined
 DROP VIEW IF EXISTS YoungCooksRecipeCount;
+DROP VIEW IF EXISTS 3topFood_groups;
 DROP VIEW IF EXISTS CooksWithLessParticipation;
 DROP VIEW IF EXISTS EpisodeWithMostEquipment;
 DROP VIEW IF EXISTS AvgCarbohydratesPerYear;
@@ -32,7 +33,6 @@ DROP VIEW IF EXISTS MaxRecipeDifficultyPerYear;
 DROP VIEW IF EXISTS EpisodeExperience;
 DROP VIEW IF EXISTS MostAppearedTopic;
 DROP VIEW IF EXISTS NeverAppearedFood_Group;
-DROP VIEW IF EXISTS 3topFood_groups;
 
 
 

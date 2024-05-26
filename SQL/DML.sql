@@ -357,7 +357,7 @@ SELECT * FROM CooksWithLessParticipation;
 SELECT * FROM EpisodeWithMostEquipment;
 SELECT * FROM AvgCarbohydratesPerYear;
 SELECT * FROM Top5JudgeCookScores;
-SELECT * FROM MaxRecipeDifficultyPe
+SELECT * FROM MaxRecipeDifficultyPerYear;
 SELECT * FROM EpisodeExperience;
 SELECT * FROM MostAppearedTopic;
 SELECT * FROM NeverAppearedFood_Group;

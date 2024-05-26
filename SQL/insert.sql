@@ -681,6 +681,7 @@ insert into step (description) values ('Mix chia seeds with spices and coat salm
 insert into step (description) values ('Pan-sear salmon until cooked through');
 insert into step (description) values ('Serve with a side of vegetables or grains');
 
+ALTER TABLE step ADD COLUMN time INT NOT NULL;
 UPDATE step
 SET time = SEC_TO_TIME(FLOOR(RAND() * 3600));
 

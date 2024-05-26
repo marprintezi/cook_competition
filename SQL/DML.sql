@@ -352,3 +352,13 @@ WHERE ingredient.ingredient_id IS NULL;
 --CALL VIEWS
 SELECT * FROM average_scores_combined;
 SELECT * FROM  YoungCooksRecipeCount order by cook_id;
+SELECT * FROM 3topFood_groups;
+SELECT * FROM CooksWithLessParticipation;
+SELECT * FROM EpisodeWithMostEquipment;
+SELECT * FROM AvgCarbohydratesPerYear;
+SELECT * FROM Top5JudgeCookScores;
+SELECT * FROM MaxRecipeDifficultyPe
+SELECT * FROM EpisodeExperience;
+SELECT * FROM MostAppearedTopic;
+SELECT * FROM NeverAppearedFood_Group;
+

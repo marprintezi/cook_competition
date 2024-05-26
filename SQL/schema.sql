@@ -526,7 +526,6 @@ GROUP BY
 ORDER BY 
     average_score DESC;
 
-SELECT * FROM average_scores_combined;
 
 
 
@@ -551,7 +550,6 @@ GROUP BY
 ORDER BY 
     total_recipes DESC;
 
-SELECT * FROM  YoungCooksRecipeCount order by cook_id;
 
 
 --3.6
@@ -564,7 +562,6 @@ GROUP BY r1.label_id, r2.label_id
 ORDER BY pair_count DESC
 LIMIT 3;
 
-SELECT * FROM 3topFood_groups;
 
 --3.7
 CREATE VIEW CooksWithLessParticipation AS
@@ -587,7 +584,6 @@ HAVING
         LIMIT 1
     ) - 5;
 
-SELECT * FROM CooksWithLessParticipation;
 
 
 
@@ -599,8 +595,6 @@ JOIN recipe_equipment re ON ec.recipe_id = re.recipe_id
 GROUP BY ec.episode_id
 ORDER BY equipment_count DESC
 LIMIT 1;
-SELECT * FROM EpisodeWithMostEquipment;
-
 
 --3.9
 CREATE VIEW AvgCarbohydratesPerYear AS
@@ -619,7 +613,6 @@ GROUP BY
     e.calendar_year
 ORDER BY 
     e.calendar_year;
-SELECT * FROM AvgCarbohydratesPerYear;
 
 
 
@@ -646,8 +639,6 @@ GROUP BY
 ORDER BY 
     total_score DESC
 LIMIT 5;
-SELECT * FROM Top5JudgeCookScores;
-
 
 
 --3.12
@@ -665,7 +656,6 @@ SELECT
          recipe r ON ec.recipe_id = r.recipe_id
      GROUP BY
          competition_year;
- SELECT * FROM MaxRecipeDifficultyPerYear;
 
 
 
@@ -695,7 +685,6 @@ FROM (
 ORDER BY 
     total_experience ASC
 LIMIT 1;
-SELECT * FROM EpisodeExperience;
 
 
 
@@ -714,7 +703,6 @@ GROUP BY
 ORDER BY
     appearance_count DESC
 LIMIT 1;
-SELECT * FROM MostAppearedTopic;
 
 
 --3.15
@@ -724,7 +712,6 @@ FROM food_group
 LEFT JOIN ingredient ON food_group.fg_id = ingredient.fg_id
 WHERE ingredient.ingredient_id IS NULL;
 
-SELECT * FROM NeverAppearedFood_Group;
 
 
 

@@ -36,7 +36,7 @@ CREATE TABLE  recipe (
             constraint recipe_ibfk_2 foreign key (unit_id) references unit(unit_id) on delete cascade on update cascade
 
 );
-
+ALTER TABLE recipe AUTO_INCREMENT = 31;
 
 
 CREATE TABLE meal_type (

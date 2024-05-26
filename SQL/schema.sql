@@ -547,7 +547,7 @@ LIMIT 3;
 SELECT * FROM 3topFood_groups;
 
 --3.7
-CREATE VIEW YoungCooksRecipeCount AS
+CREATE VIEW CooksWithLessParticipation AS
 SELECT 
     c.cook_id, 
     c.first_name, 

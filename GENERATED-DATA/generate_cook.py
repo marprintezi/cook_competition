@@ -12,7 +12,7 @@ def generate_cook_data(num_records):
         last_name = fake.last_name()
         phone_number = fake.phone_number()[:15]  # Ensure phone number is within 15 characters
         birth_date = fake.date_of_birth(minimum_age=20, maximum_age=60)
-        age = (fake.date_time_this_year().year - birth_date.year)
+        age = fake.date_time_this_year().year - birth_date.year
         grade_id = random.randint(1, 5)  # Assuming there are 5 grades in the grade table
         
         cook = (first_name, last_name, phone_number, birth_date, age, grade_id)
@@ -20,8 +20,8 @@ def generate_cook_data(num_records):
     
     return cooks
 
-# Generate 50 records
-num_records = 50
+# Generate 100 records
+num_records = 100
 cook_data = generate_cook_data(num_records)
 
 # Create SQL file and write the data
@@ -35,5 +35,5 @@ with open('C:\\Users\\marpr\\insert_cook_data.sql', 'w') as file:
             line += ";\n"
         file.write(line)
 
-print("SQL file created successfully with 50 records.");
+print("SQL file created successfully with 100 records.")
 

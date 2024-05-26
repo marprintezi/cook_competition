@@ -223,7 +223,7 @@ insert into recipe_label(recipe_id,label_id) values (34,13);
 insert into recipe_label(recipe_id,label_id) values (35,5);
 insert into recipe_label(recipe_id,label_id) values (36,14);
 insert into recipe_label(recipe_id,label_id) values (37,3);
-insert into recipe_label(recipe_id,label_id) values (38,16);
+insert into recipe_label(recipe_id,label_id) values (38,14);
 insert into recipe_label(recipe_id,label_id) values (39,5);
 insert into recipe_label(recipe_id,label_id) values (40,9);
 insert into recipe_label(recipe_id,label_id) values (41,8);

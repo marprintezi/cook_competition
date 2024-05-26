@@ -87,12 +87,8 @@ CREATE TABLE recipe_equipment (
 CREATE TABLE step (
             step_id INT NOT NULL AUTO_INCREMENT,
             description VARCHAR(200),
-            time INT NOT NULL,
             PRIMARY KEY (step_id)
 );
-
-UPDATE step
-SET time = SEC_TO_TIME(FLOOR(RAND() * 3600));
 
 
 CREATE TABLE recipe_step (

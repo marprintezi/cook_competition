@@ -230,7 +230,7 @@ CREATE TABLE score (
 --
 
 
-DELIMETER //
+DELIMITER //
 
 CREATE PROCEDURE InsertEpisodeCooks(episode_number int, cal_year int)
 BEGIN
@@ -292,7 +292,7 @@ BEGIN
         limit 10;
 END //
 
-DELIMETER ;
+DELIMITER ;
 
 
 

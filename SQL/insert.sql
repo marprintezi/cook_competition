@@ -433,231 +433,165 @@ insert into recipe_equipment (recipe_id,equipment_id) values (80,45);
 INSERT INTO step (description) VALUES ('Mix jerk seasoning with chicken');										
 INSERT INTO step (description) VALUES ('Marinate chicken for at least 2 hours');										
 INSERT INTO step (description) VALUES ('Grill chicken until cooked through');										
-										
-										
 INSERT INTO step (description) VALUES ('Cook pasta according to package instructions');										
 INSERT INTO step (description) VALUES ('Chop vegetables (like tomatoes, cucumbers, bell peppers)');										
 INSERT INTO step (description) VALUES ('Mix cooked pasta and vegetables with dressing');										
 INSERT INTO step (description) VALUES ('Chill before serving');										
-										
-										
 INSERT INTO step (description) VALUES ('Prepare meat sauce');										
 INSERT INTO step (description) VALUES ('Layer meat sauce, lasagna noodles, ricotta, and mozzarella');										
 INSERT INTO step (description) VALUES ('Repeat layers');										
 INSERT INTO step (description) VALUES ('Bake until bubbly and golden');										
-										
-										
 INSERT INTO step (description) VALUES ('Mix flour, baking powder, salt, and sugar');										
 INSERT INTO step (description) VALUES ('Add milk, eggs, and melted butter');										
 INSERT INTO step (description) VALUES ('Cook pancakes on a griddle until golden');										
-										
-										
 INSERT INTO step (description) VALUES ('Saute garlic and onions');										
 INSERT INTO step (description) VALUES ('Add white beans, diced tomatoes, and spinach');										
 INSERT INTO step (description) VALUES ('Season with salt, pepper, and herbs');										
 INSERT INTO step (description) VALUES ('Simmer until flavors meld');										
-										
-										
 INSERT INTO step (description) VALUES ('Cook spaghetti according to package instructions');										
 INSERT INTO step (description) VALUES ('Heat marinara sauce');										
 INSERT INTO step (description) VALUES ('Serve spaghetti with sauce and grated Parmesan');										
-										
-										
 INSERT INTO step (description) VALUES ('Mix flour, sugar, baking powder, and salt');										
 INSERT INTO step (description) VALUES ('Cut in cold butter');										
 INSERT INTO step (description) VALUES ('Stir in milk until dough forms');										
 INSERT INTO step (description) VALUES ('Shape dough, cut into wedges, and bake until golden');										
-										
-										
 INSERT INTO step (description) VALUES ('Roll out pizza dough');										
 INSERT INTO step (description) VALUES ('Spread with tomato sauce and top with cheese and toppings');										
 INSERT INTO step (description) VALUES ('Bake until crust is golden and cheese is bubbly');										
-										
-										
 INSERT INTO step (description) VALUES ('Heat oil in a wok');										
 INSERT INTO step (description) VALUES ('Stir-fry vegetables and protein');										
 INSERT INTO step (description) VALUES ('Add sauce and cook until heated through');										
-										
-										
 INSERT INTO step (description) VALUES ('Saute onions, carrots, and celery');										
 INSERT INTO step (description) VALUES ('Add chicken broth and tortellini');										
 INSERT INTO step (description) VALUES ('Simmer until tortellini is cooked');										
 INSERT INTO step (description) VALUES ('Stir in spinach and season to taste');										
-										
-										
 INSERT INTO step (description) VALUES ('Mix ground meat with breadcrumbs, egg, and seasoning');										
 INSERT INTO step (description) VALUES ('Roll into meatballs');										
 INSERT INTO step (description) VALUES ('Brown meatballs in a skillet');										
 INSERT INTO step (description) VALUES ('Simmer in gravy until cooked through');										
-										
-										
 INSERT INTO step (description) VALUES ('Brown ground beef in a skillet');										
 INSERT INTO step (description) VALUES ('Add barley, broth, and vegetables');										
 INSERT INTO step (description) VALUES ('Simmer until barley is tender and liquid is absorbed');										
-										
-										
 INSERT INTO step (description) VALUES ('Cook ground beef with southwest seasoning');										
 INSERT INTO step (description) VALUES ('Add rice, broth, and vegetables');										
 INSERT INTO step (description) VALUES ('Simmer until rice is cooked and liquid is absorbed');										
-										
-										
 INSERT INTO step (description) VALUES ('Cook rice and let it cool');										
 INSERT INTO step (description) VALUES ('Stir-fry vegetables and protein');										
 INSERT INTO step (description) VALUES ('Add cooked rice and soy sauce');										
 INSERT INTO step (description) VALUES ('Stir-fry until heated through');										
-										
-										
 INSERT INTO step (description) VALUES ('Cook sausage until browned');										
 INSERT INTO step (description) VALUES ('Add beans, tomatoes, and seasoning');										
 INSERT INTO step (description) VALUES ('Simmer until flavors meld');										
-										
-										
 INSERT INTO step (description) VALUES ('Cook pasta according to package instructions');										
 INSERT INTO step (description) VALUES ('Saute prosciutto, garlic, and peas');										
 INSERT INTO step (description) VALUES ('Toss cooked pasta with prosciutto mixture and Parmesan');										
-										
-										
 INSERT INTO step (description) VALUES ('Stir-fry chicken with vegetables');										
 INSERT INTO step (description) VALUES ('Cook noodles according to package instructions');										
 INSERT INTO step (description) VALUES ('Combine cooked chicken, vegetables, and noodles with sauce');										
 INSERT INTO step (description) VALUES ('Garnish with cashews before serving');										
-										
-										
 INSERT INTO step (description) VALUES ('Season chicken with herbs and spices');										
 INSERT INTO step (description) VALUES ('Grill or pan-sear chicken until cooked through');										
 INSERT INTO step (description) VALUES ('Serve with honey butter sauce');										
-										
-										
 INSERT INTO step (description) VALUES ('Whisk together eggs, milk, and cinnamon');										
 INSERT INTO step (description) VALUES ('Dip bread slices in egg mixture');										
 INSERT INTO step (description) VALUES ('Cook bread slices on a griddle until golden');										
-										
-										
 INSERT INTO step (description) VALUES ('Layer sliced potatoes and grated cheddar cheese in a baking dish');										
 INSERT INTO step (description) VALUES ('Crack eggs over the potato and cheese layer');										
 INSERT INTO step (description) VALUES ('Bake until eggs are set and cheese is melted');										
-										
-										
 INSERT INTO step (description) VALUES ('Cook mostaccioli pasta according to package instructions');										
 INSERT INTO step (description) VALUES ('Mix cooked pasta with marinara sauce and cheese');										
 INSERT INTO step (description) VALUES ('Bake until bubbly and golden');										
-										
-										
 INSERT INTO step (description) VALUES ('Cook ravioli according to package instructions');										
 INSERT INTO step (description) VALUES ('Saute snap peas and garlic');										
 INSERT INTO step (description) VALUES ('Toss cooked ravioli with snap peas, olive oil, and Parmesan');										
-										
-										
 INSERT INTO step (description) VALUES ('Prepare dough and let it rise');										
 INSERT INTO step (description) VALUES ('Shape dough into small balls');										
 INSERT INTO step (description) VALUES ('Place three balls into each muffin cup');										
 INSERT INTO step (description) VALUES ('Bake until golden brown');										
-										
-										
 INSERT INTO step (description) VALUES ('Mix dry ingredients together in one bowl, and wet ingredients in another');										
 INSERT INTO step (description) VALUES ('Combine wet and dry ingredients, then fold in blueberries');										
 INSERT INTO step (description) VALUES ('Scoop batter into muffin tin and bake until golden');										
-										
-										
 INSERT INTO step (description) VALUES ('Mix whole grain flour, baking powder, salt, and sugar');										
 INSERT INTO step (description) VALUES ('Add milk, eggs, and melted butter');										
 INSERT INTO step (description) VALUES ('Cook in waffle iron until golden and crisp');										
-										
-										
 INSERT INTO step (description) VALUES ('Mix together flour, powdered sugar, and butter to make crust');										
 INSERT INTO step (description) VALUES ('Bake crust, then pour lemon filling over it');										
 INSERT INTO step (description) VALUES ('Bake until set, then dust with powdered sugar before serving');										
-										
-										
 INSERT INTO step (description) VALUES ('Cream together butter and sugars');										
 INSERT INTO step (description) VALUES ('Mix in eggs and vanilla');										
 INSERT INTO step (description) VALUES ('Stir in flour, baking powder, and salt');										
 INSERT INTO step (description) VALUES ('Swirl Nutella into batter, then bake until golden brown');										
-										
-										
 INSERT INTO step (description) VALUES ('Heat milk in a saucepan until steaming');										
 INSERT INTO step (description) VALUES ('Whisk in cocoa powder, sugar, and vanilla extract');										
 INSERT INTO step (description) VALUES ('Serve hot with marshmallows or whipped cream on top');										
-										
-										
 INSERT INTO step (description) VALUES ('Melt chocolate and butter together in a double boiler');										
 INSERT INTO step (description) VALUES ('Whip cream until stiff peaks form');										
 INSERT INTO step (description) VALUES ('Fold melted chocolate mixture into whipped cream');										
 INSERT INTO step (description) VALUES ('Chill until set, then serve');										
-										
-										
 INSERT INTO step (description) VALUES ('Press cookie dough into a baking pan');										
 INSERT INTO step (description) VALUES ('Top with chocolate and marshmallows');										
 INSERT INTO step (description) VALUES ('Bake until golden brown and bubbly');										
-										
-										
 INSERT INTO step (description) VALUES ('Coat chicken pieces in batter');										
 INSERT INTO step (description) VALUES ('Fry chicken until golden brown');										
 INSERT INTO step (description) VALUES ('Toss fried chicken in orange sauce');										
-										
-										
 INSERT INTO step (description) VALUES ('Marinate beef in Asian-inspired sauce');										
 INSERT INTO step (description) VALUES ('Slow cook beef until tender');										
 INSERT INTO step (description) VALUES ('Shred beef and serve with rice or noodles');										
-										
-										
 INSERT INTO step (description) VALUES ('Bread chicken with seasoned breadcrumbs');										
 INSERT INTO step (description) VALUES ('Fry chicken until crispy and golden');										
 INSERT INTO step (description) VALUES ('Serve over sauteed kale');										
-										
-										
 INSERT INTO step (description) VALUES ('Rub chicken with olive oil and seasoning');										
 INSERT INTO step (description) VALUES ('Roast chicken until cooked through');										
 INSERT INTO step (description) VALUES ('Serve sliced chicken over grains with vegetables and sauce');										
-										
-										
-										
 INSERT INTO step (description) VALUES ('Cook rice noodles according to package instructions');										
 INSERT INTO step (description) VALUES ('Prepare meatballs and cook until browned');										
 INSERT INTO step (description) VALUES ('Stir-fry bok choy until tender-crisp');										
 INSERT INTO step (description) VALUES ('Combine cooked noodles, meatballs, and bok choy in a bowl');										
 INSERT INTO step (description) VALUES ('Toss with sauce and garnish with sesame seeds');										
-										
-										
 INSERT INTO step (description) VALUES ('Bread chicken cutlets with seasoned breadcrumbs');										
 INSERT INTO step (description) VALUES ('Pan-fry chicken cutlets until golden and cooked through');										
 INSERT INTO step (description) VALUES ('Shred carrots and kale for salad');										
 INSERT INTO step (description) VALUES ('Toss carrots and kale with dressing');										
 INSERT INTO step (description) VALUES ('Serve chicken cutlets with carrot and kale salad');										
-										
-										
 INSERT INTO step (description) VALUES ('Boil gnocchi until they float, then drain');										
 INSERT INTO step (description) VALUES ('Roast diced sweet potatoes until tender');										
 INSERT INTO step (description) VALUES ('Toss cooked gnocchi and sweet potatoes with sauce');										
 INSERT INTO step (description) VALUES ('Garnish with Parmesan and fresh herbs before serving');										
-										
-										
 INSERT INTO step (description) VALUES ('Coat chicken breasts with garlic, Parmesan, and breadcrumbs');										
 INSERT INTO step (description) VALUES ('Bake chicken until golden and cooked through');										
 INSERT INTO step (description) VALUES ('Serve with lemon wedges for squeezing over the top');										
-										
-										
 INSERT INTO step (description) VALUES ('Prepare pie crust and line pie dish');										
 INSERT INTO step (description) VALUES ('Mix cooked turkey, vegetables, and gravy together');										
 INSERT INTO step (description) VALUES ('Pour mixture into pie crust');										
 INSERT INTO step (description) VALUES ('Top with second pie crust and bake until golden brown');										
-										
-										
 INSERT INTO step (description) VALUES ('Cook bacon until crispy, then crumble');										
 INSERT INTO step (description) VALUES ('Trim and halve Brussels sprouts');										
 INSERT INTO step (description) VALUES ('Toss Brussels sprouts with olive oil, balsamic vinegar, and bacon');										
 INSERT INTO step (description) VALUES ('Roast until tender and caramelized');										
-										
-										
 INSERT INTO step (description) VALUES ('Quarter red potatoes');										
 INSERT INTO step (description) VALUES ('Toss with olive oil, lemon zest, and herbs');										
 INSERT INTO step (description) VALUES ('Roast until potatoes are tender and golden');										
-										
-										
 INSERT INTO step (description) VALUES ('Cook bacon until crispy, then crumble');										
 INSERT INTO step (description) VALUES ('Saute onions, celery, and carrots in bacon fat');										
 INSERT INTO step (description) VALUES ('Add diced potatoes, corn, and broth');										
-INSERT INTO step (description) VALUES ('Simmer until potatoes are tender, then stir in cream');										
+INSERT INTO step (description) VALUES ('Simmer until potatoes are tender, then stir in cream');		
+
+
+
+insert into step (description) values ('Simmer until potatoes are tender, then stir in cream');
+insert into step (description) values (' Heat oil in a skillet');
+insert into step (description) values ('Add chicken pieces and cook until golden');
+insert into step (description) values ('Stir in Thai curry paste and coconut milk');
+insert into step (description) values ('Simmer until chicken is cooked through');
+insert into step (description) values ('Serve with steamed rice and garnish with fresh herbs');
+insert into step (description) values ('Saute onions, carrots, and celery in olive oil');
+insert into step (description) values ('Add vegetable broth and bring to a boil');
+insert into step (description) values ('Stir in pasta and cook until tender');
+insert into step (description) values ('Add canned tomatoes, beans, and spinach');
+insert into step (description) values ('Simmer until vegetables are tender and flavors are melded');
+insert into step (description) values ('Prepare pie crust and line pie dish');
+insert into step (description) values ('Mix blueberries, sugar, and lemon juice');
+insert into step (description) values ('Pour mixture into pie crust and top with lattice crust');
 insert into step (description) values ('Bake until crust is golden and filling is bubbly');
 insert into step (description) values ('Combine milk, sugar, and cocoa powder in a saucepan');
 insert into step (description) values ('Cook over medium heat, stirring constantly');
@@ -681,9 +615,11 @@ insert into step (description) values ('Mix chia seeds with spices and coat salm
 insert into step (description) values ('Pan-sear salmon until cooked through');
 insert into step (description) values ('Serve with a side of vegetables or grains');
 
+
 ALTER TABLE step ADD COLUMN time INT NOT NULL;
 UPDATE step
 SET time = SEC_TO_TIME(FLOOR(RAND() * 3600));
+
 
 --recipe step
 insert into recipe_step(is_prep,recipe_step_order,recipe_id,step_id) values (0,1,31,1);

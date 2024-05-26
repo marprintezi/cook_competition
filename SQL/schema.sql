@@ -535,7 +535,7 @@ SELECT * FROM  YoungCooksRecipeCount order by cook_id;
 
 
 --3.6
-AREATE VIEW 3topFood_groups AS
+CREATE VIEW 3topFood_groups AS
 SELECT r1.label_id AS label1_id, r2.label_id AS label2_id, COUNT(*) AS pair_count
 FROM recipe_label r1
 JOIN recipe_label r2 ON r1.recipe_id = r2.recipe_id AND r1.label_id < r2.label_id

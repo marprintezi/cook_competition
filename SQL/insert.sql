@@ -1701,7 +1701,7 @@ CALL InsertEpisodeJudges(49,2025);
 CALL InsertEpisodeJudges(50,2025);
 
 --score
-CALL procedure Cook_Random_Scores();
+CALL Create_Cook_Random_Scores();
 
 --winner
 CALL Get_Episode_Winner(53);
